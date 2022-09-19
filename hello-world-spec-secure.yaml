@@ -1,0 +1,28 @@
+swagger: '2.0'
+info:
+  title: Hello World Portal
+  version: "1"
+  description: A simple portal for a hello-world proxy
+host: [you_apigee_host]
+basePath:
+  /hello-world
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  APIKeyQuery:
+    type: "apiKey"
+    in: "query"
+    name: "apikey"
+security:
+  - APIKeyQuery: []
+paths:
+  /:
+    get:
+      operationId: GetMessage
+      responses:
+        '200':
+          description: A successful response.
