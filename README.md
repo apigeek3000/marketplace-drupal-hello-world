@@ -88,3 +88,7 @@ Now we have a functional custom Drupal Portal promoting our Apigee X API, great!
 2. From within the API select the "Authorize" button and save your API Key within
 3. Select the / GET call from under API REFERENCE. Under Try this API click EXECUTE
 4. Voila! You have a working API secured and documented within your Marketplace Drupal Portal!
+
+## \[Optional\] Related Video Walkthrough
+
+I also create a YouTube walkthrough using an example public sector use case, you can find it [here](https://www.youtube.com/watch?v=GeLqhPX9MPE). Also, the OpenAPI yaml file used in that video can be found at hello-world-spec-video.yaml.

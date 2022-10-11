@@ -1,0 +1,94 @@
+swagger: '2.0'
+info:
+  title: Department of Labor Portal
+  version: "1"
+  description: A portal to better the lives of our citizens
+host: [you_apigee_host]
+basePath:
+  /api/v1/dol
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  APIKeyQuery:
+    type: "apiKey"
+    in: "header"
+    name: "apikey"
+security:
+  - APIKeyQuery: []
+paths:
+  /jobs:
+    get:
+      operationId: GetJobs
+      parameters:
+        - name: query
+          in: query
+          description: 'Search for your job'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        attributes:
+                          type: object
+                          properties:
+                            jobId:
+                              type: string
+                            jobTitle:
+                              type: string
+                            employer:
+                              type: string
+                            description:
+                              type: string
+                            applicationUrl:
+                              type: string
+                            tags:
+                              type: string
+  /benefits:
+    get:
+      operationId: GetBenefits
+      parameters:
+        - name: query
+          in: query
+          description: 'Search for available benefits'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        attributes:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              benefitId:
+                                type: string
+                              benefitTitle:
+                                type: string
+                              description:
+                                type: string
+                              benefitUrl:
+                                type: string
+                              tags:
+                                type: string
